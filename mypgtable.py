@@ -1,7 +1,7 @@
 import psycopg2
 
 try:
-    conn = psycopg2.connect("dbname=company user=postgres password=1234")
+    conn = psycopg2.connect("dbname=myduka user=postgres password=1234")
     cur = conn.cursor()
 except Exception as edu:
    print(edu)
@@ -17,7 +17,7 @@ def fetch_data(tbln):
  
 def insert_product(v):
    vs=str(v)
-   q= "insert into products(name,buying_price, selling_priece, stock quantity)"\
+   q= "insert into Customers(id,first_name,last_name,email,phone)"\
        "values"+vs 
    cur.execute(q)
    conn.commit()

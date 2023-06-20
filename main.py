@@ -9,12 +9,15 @@ def Home():
 
 
 
-@app.route("/customers")
+@app.route("/products")
+def Customers():
+    prods=fetch_data("products")
+    return render_template('products.html', products=prods)
+
+@app.route("/sales")
 def sales():
-    prods=fetch_data("customers")
-    
-    
-    return render_template('products.html', customers=prods)
+    prods=fetch_data("sales")
+    return render_template('sales.html', sales=prods)
 
 app.run()
 
